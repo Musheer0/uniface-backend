@@ -22,7 +22,7 @@ def get_single_face_embedding(faceId:str):
     else:
         #create embedding
         # TODO download face
-        face_path = "/home/muchi/Projects/blurfield/backend/b.webp"
+        face_path = faceId
         detector = get_detector()
         embeddings = create_face_embedding(face_path, detector)
         #TODO upload embeddings

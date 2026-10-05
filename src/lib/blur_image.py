@@ -67,7 +67,7 @@ def blur_image_with_filter(
     if target_face is None:
         raise ValueError("Error recognizing target face")
 
-    threshold = 0.5
+    threshold = 0.3
 
     filtered_faces = [
         face
@@ -78,7 +78,7 @@ def blur_image_with_filter(
                 image,
                 face.landmarks,
             ),
-        ) >= threshold
+        ) <= threshold
     ]
 
     _blur_faces(
