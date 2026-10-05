@@ -1,0 +1,8 @@
+
+.env
+/lib
+lib64
+bin
+__pycache__
+CACHEDIR.TAG
+node_modules
