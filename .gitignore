@@ -1,8 +1,34 @@
 
 .env
+.env.*
 /lib
 lib64
 bin
 __pycache__
+*/__pycache__
+*.pyc
 CACHEDIR.TAG
 node_modules
+
+# local dev / deploy artefacts
+.venv/
+.conda/
+.modal/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# runtime media (never commit inputs/outputs)
+temp/
+*.mp4
+*.avi
+*.mov
+*.mkv
+output.mp4
+timestamp.mp4
+
+# local test artefacts
+test/__pycache__/
+
+# local-only AI notes (never commit)
+ai_suggestions.md
