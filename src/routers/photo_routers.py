@@ -26,6 +26,7 @@ def blur_everyone(Body:BlurEveryoneRequest)->BaseResponse:
     image = download_file(file_key=Body.img_key,file_path=input_path)
     blur_image(blur_type=Body.blur_method, img=image,output_path=output_path)
     upload_file(file_key=Body.output_key, file_path=output_path)
+    os.remove(input_path)
     return BaseResponse(success=True)
 @router.post("/everyone/filtered")
 def blur_everyone_filtered(Body:BlurEveryoneFilteredRequest)->BaseResponse:
@@ -40,4 +41,5 @@ def blur_everyone_filtered(Body:BlurEveryoneFilteredRequest)->BaseResponse:
     face = download_file(file_key=Body.face_key,file_path=face_path)
     blur_image_with_filter(blur_type=Body.blur_method, img=image,output_path=output_path,face_id=face)
     upload_file(file_key=Body.output_key, file_path=output_path)
+    os.remove(input_path)
     return BaseResponse(success=True)

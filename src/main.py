@@ -1,6 +1,8 @@
 import os
 import modal
 
+from src.routers import video_timestamp_routers
+
 
 
 TEMP_DIR = "temp"
@@ -53,5 +55,5 @@ def api():
 
     web_app.include_router(photo_routers.router)
     web_app.include_router(video_routers.router)
-
+    web_app.include_router(video_timestamp_routers.router)
     return web_app

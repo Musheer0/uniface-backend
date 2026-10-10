@@ -30,7 +30,6 @@ def _process_video(
     timestamps: TimestampRanges,
 ) -> None:
     cap = cv2.VideoCapture(video_path)
-
     if not cap.isOpened():
         raise ValueError(
             f"Could not open video: {video_path}"
@@ -130,6 +129,7 @@ def _process_video(
                 # Encode video
                 "-c:v",
                 "libx264",
+                output_path,
 
                 "-preset",
                 "medium",
