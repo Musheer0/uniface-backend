@@ -2,6 +2,7 @@ import os
 import modal
 
 
+
 TEMP_DIR = "temp"
 
 OUTPUT_VIDEOS_DIR = os.path.join(TEMP_DIR, "outputs", "videos")
@@ -44,11 +45,13 @@ secrets = modal.Secret.from_name("blur")
 def api():
     from fastapi import FastAPI
     from src.routers import photo_routers
+    from src.routers import video_routers
 
     setup()
 
     web_app = FastAPI()
 
     web_app.include_router(photo_routers.router)
+    web_app.include_router(video_routers.router)
 
     return web_app
