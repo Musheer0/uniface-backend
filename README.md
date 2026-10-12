@@ -1,4 +1,4 @@
-# Blurfield — Backend
+# Uniface — Backend
 
 GPU-backed face-blurring API for photos and videos. Built with **FastAPI**, deployed on **Modal** (CUDA image), using **UniFace** (`RetinaFace` detection + `ArcFace` recognition + `BlurFace` anonymization) with **S3-compatible object storage** for input/output files.
 
