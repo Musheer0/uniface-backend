@@ -214,5 +214,3 @@ modal serve src/main.py   # dev
 - Endpoints are synchronous and block while the file processes (mitigated with a 30-min Modal timeout + per-request isolation, but no job queue / progress callbacks yet).
 - Reference-face embeddings are cached in-process by content hash; no persistent vector DB.
 - `test.py` is a manual webcam script, not part of the automated suite.
-
-All items from `ai_suggestions.md` are implemented except the open product questions at its bottom (queue vs sync, blur-only-target mode, DB job tracking) — those need your call.

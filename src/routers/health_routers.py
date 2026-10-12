@@ -15,6 +15,11 @@ def healthz():
     return {"ok": True}
 
 
+@router.head("/healthz")
+def healthz_head():
+    return {"ok": True}
+
+
 @router.get("/readyz")
 def readyz():
     """Warm cached models and check S3 bucket reachability (best effort)."""
